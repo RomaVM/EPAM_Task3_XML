@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           targetNamespace="http://ccc.com/Purchase"
+           xmlns="http://ccc.com/Purchase">
+
+<xs:element name="bank" type="typeBank"/>
+    <xs:complexType name="typeBank">
+        <xs:sequence>
+            <xs:element name="deposit" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="bankName" type="xs:string"/>
+                        <xs:element name="country" type="xs:string"/>
+                        <xs:element name="type" type="DType"/>
+                        <xs:element name="depositor" type="xs:string"/>
+                        <xs:element name="accountId" type="xs:int"/>
+                        <xs:element name="amount" type="xs:double"/>
+                        <xs:element name="profitability" type="xs:byte"/>
+                        <xs:element name="timeConstraints" type="xs:short"/>
+                    </xs:sequence>
+                    <xs:attribute name="id" type="xs:ID" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+<xs:simpleType name="DType">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="demand"/> <!-- вклад до востребования -->
+        <xs:enumeration value="fixed"/> <!-- срочный вклад -->
+        <xs:enumeration value="estimated"/> <!-- расчетный вклад -->
+        <xs:enumeration value="accumulation"/> <!-- накопительный вклад -->
+        <xs:enumeration value="saving"/> <!-- сберегательный вклад -->
+        <xs:enumeration value="metal"/> <!-- металлический вклад -->
+    </xs:restriction>
+</xs:simpleType>
+    
+</xs:schema>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bank xmlns="http://ccc.com/Purchase"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://ccc.com/Purchase deposits.xsd">
+
+
+    <deposit id="c001">
+		<bankName>Privat</bankName>
+		<country>Ukraine</country>
+		<type>fixed</type>
+		<depositor>Roman Vasylenko</depositor>
+		<accountId>1</accountId>
+		<amount>50000</amount>
+		<profitability>10</profitability>
+		<timeConstraints>12</timeConstraints>
+	</deposit>
+
+    <deposit id="c002">
+        <bankName>Aval</bankName>
+        <country>Ukraine</country>
+        <type>metal</type>
+        <depositor>Andrey Gerasimenko</depositor>
+        <accountId>2</accountId>
+        <amount>10000</amount>
+        <profitability>11</profitability>
+        <timeConstraints>24</timeConstraints>
+    </deposit>
+
+</bank>
+
